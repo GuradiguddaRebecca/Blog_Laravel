@@ -34,6 +34,8 @@
                     <div class="col-md-4">
 
                     <img class="avatar" src="{{ @$profile->profile_pic }}" alt="">
+                    <p class="lead">{{ @$profile->name }}</p>
+                    <p>{{ @$profile->designation }}</p>
                     </div>
                     <div class="col-md-8"></div>
                 </div>
