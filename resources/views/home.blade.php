@@ -32,10 +32,26 @@
                     @endif
 
                     <div class="col-md-4">
-
+                    @if(!empty($profile))
                     <img class="avatar" src="{{ @$profile->profile_pic }}" alt="">
+                    @else
+                    <img class="avatar" src="{{ url('images/profile-pic.jpg') }}" alt="">
+                    @endif
+
+                    @if(!empty($profile))
                     <p class="lead">{{ @$profile->name }}</p>
-                    <p>{{ @$profile->designation }}</p>
+                    @else
+                    <p></p>
+                    @endif
+
+                    @if(!empty($profile))
+                    <p class="lead"> {{ @$profile->designation }} </p> 
+                    @else
+                    <p></p>
+                    @endif
+                    
+                    
+            
                     </div>
                     <div class="col-md-8"></div>
                 </div>

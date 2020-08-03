@@ -23,6 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/post', 'PostController@index');
+Route::post('/addPost', 'PostController@store');
 
 Route::get('/profile', 'ProfileController@index');
 Route::post('/addProfile', 'ProfileController@store');
