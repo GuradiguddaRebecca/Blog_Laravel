@@ -32,7 +32,8 @@
                     @endif
 
                     <div class="col-md-4">
-                    <img class="avatar" src="{{url('images/avatar.png')}}" alt="">
+
+                    <img class="avatar" src="{{ @$profile->profile_pic }}" alt="">
                     </div>
                     <div class="col-md-8"></div>
                 </div>
