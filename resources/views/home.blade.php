@@ -79,7 +79,7 @@
                                 </ul>
 
                                 <cite style="float:left;">Posted on: {{date('M j,Y H:i', 
-                                strtotime($post->update_at))}}</cite>
+                                strtotime($post->updated_at))}}</cite>
                                 <hr>
                             @endforeach
                     

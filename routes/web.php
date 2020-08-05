@@ -24,9 +24,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/post', 'PostController@index');
 Route::post('/addPost', 'PostController@store');
+Route::get('/view/{id}', 'PostController@show');
+Route::get('/edit/{id}', 'PostController@edit');
+Route::post('/editPost/{id}', 'PostController@editPost');
+Route::get('/delete/{id}', 'PostController@delete');
 
 Route::get('/profile', 'ProfileController@index');
 Route::post('/addProfile', 'ProfileController@store');
 
 Route::get('/category', 'CategoryController@index');
 Route::post('/addCategory', 'CategoryController@store');
+
