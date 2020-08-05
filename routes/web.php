@@ -41,3 +41,5 @@ Route::get('/like/{id}', 'PostController@like');
 Route::get('/dislike/{id}', 'PostController@dislike');
 
 Route::post('/comment/{id}', 'PostController@comment');
+
+Route::post('/search', 'PostController@search');
