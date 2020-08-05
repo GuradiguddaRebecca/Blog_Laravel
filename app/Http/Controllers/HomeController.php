@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Profile;
 use App\user;
+use App\Post;
 use Auth;
 
 class HomeController extends Controller
@@ -34,8 +35,8 @@ class HomeController extends Controller
                     ->select('users.*', 'profiles.*')
                     ->where(['profiles.user_id' => $user_id])
                     ->first();
-        
-        return view('home',['profile' => $profile]);
+        $posts = Post::all();
+        return view('home',['profile' => $profile, 'posts'=> $posts]);
         
     }
 }
