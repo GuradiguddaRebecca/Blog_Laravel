@@ -4,7 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            
+            @if (session('response'))
+            <div class="alert alert-success" role="alert">
+                {{ session('response') }}
+            </div>
+            @endif
         
         <div class="card-body">
            
@@ -37,12 +41,12 @@
                                 <ul class="nav nav-pills">
                                     <li role="presentation">
                                     <a href='{{ url("/like/{$post->id}") }}'>
-                                            <span class="fa fa-thumbs-up"> Like () </span>
+                                            <span class="fa fa-thumbs-up"> Like ({{$likeCtr}}) </span>
                                         </a>
                                     </li>
                                     <li role="presentation">
                                         <a href='{{ url("/dislike/{$post->id}") }}'>
-                                            <span class="fa fa-thumbs-down"> Dislike () </span>
+                                            <span class="fa fa-thumbs-down"> Dislike ({{$dislikeCtr}}) </span>
                                         </a>
                                     </li>
                                     <li role="presentation">
@@ -58,7 +62,33 @@
                         @else
                             <p>No post available</p>
                         @endif
+                        
+                        <form method="POST" action='{{ url("/comment/{$post->id}" ) }}'>
+                            @csrf
+    
+                            <div class="form-group row">
+                                <textarea id="comment" rows="7" type="comment" class="form-control @error('comment') is-invalid @enderror" name="comment"  required autocomplete="comment"></textarea>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <button type="submit" class="btn btn-primary btn-large btn-block">
+                                    {{ __('Post Comment') }}
+                                </button>
+                            </div>
+                        </form>  
+                        
+                        <h3>Comment</h3>
+                        @if(count($comments)>0)
+                            @foreach($comments as $comment)
+                                <p>{{ $comment->comment }}</p>
+                                <p>Posted by:{{ $comment->name }}</p>
+                                <hr>
+                            @endforeach
                     
+                        @else
+                            <p>No comments available</p>
+                        @endif
+                            </div>
                     </div>
             </div>
         </div>
