@@ -86,7 +86,8 @@
                         @else
                             <p>No post available</p>
                         @endif
-                    
+                        
+                        {{$posts->links()}}
                     </div>
             </div>
         </div>
