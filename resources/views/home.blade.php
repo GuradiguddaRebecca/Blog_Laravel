@@ -83,6 +83,7 @@
                                             <span class="fa fa-eye"> VIEW </span>
                                         </a>
                                     </li>
+                                    @if(Auth::id()==1)
                                     <li role="presentation">
                                         <a href='{{ url("/edit/{$post->id}") }}'>
                                             <span class="fa fa-pencil-square-o"> EDIT </span>
@@ -93,6 +94,8 @@
                                             <span class="fa fa-trash"> DELETE </span>
                                         </a>
                                     </li>
+                                    @endif
+                                    
                                 </ul>
 
                                 <cite style="float:left;">Posted on: {{date('M j,Y H:i', 
