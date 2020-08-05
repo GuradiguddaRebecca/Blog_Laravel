@@ -35,3 +35,4 @@ Route::post('/addProfile', 'ProfileController@store');
 Route::get('/category', 'CategoryController@index');
 Route::post('/addCategory', 'CategoryController@store');
 
+Route::get('/category/{id}', 'PostController@category');

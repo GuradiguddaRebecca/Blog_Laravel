@@ -87,6 +87,7 @@
                             <p>No post available</p>
                         @endif
                         
+                        {{-- pagination --}}
                         {{$posts->links()}}
                     </div>
             </div>
